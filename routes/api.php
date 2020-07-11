@@ -17,3 +17,7 @@ Route::post('register', 'AuthController@register');
 Route::post('login', 'AuthController@login');
 Route::get('logout', 'AuthController@logout');
 Route::get('user', 'AuthController@getAuthUser');
+
+Route::apiResource('books', 'BookController');
+
+Route::post('books/{book}/ratings', 'RatingController@store');
