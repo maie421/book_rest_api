@@ -6,6 +6,7 @@ use App\Book;
 use Illuminate\Http\Request;
 use App\Http\Resources\BookResource;
 
+
 class BookController extends Controller
 {
     public function index()
@@ -34,9 +35,13 @@ class BookController extends Controller
         return new BookResource($book);
 }
 
-    public function show(book $book)
+    public function show($book)//isbn 책기준 리뷰
     {
-        return new BookResource($book);
+      $book = Book::where('isbn', $book)
+               ->orderBy('created_at', 'desc')
+               ->get();
+        // return new BookResource($book);
+        return response()->json($book);
     }
 
 
@@ -65,4 +70,8 @@ class BookController extends Controller
         $book ->delete();
         return response()->json(null,204);
     }
+
+
+
+
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Http\Resources\UserResource;
 use Illuminate\Http\Request;
 use App\User;
 
@@ -35,13 +36,24 @@ class AuthController extends Controller
     }
     public function getAuthUser(Request $request)
     {
-        return response()->json(auth()->user());
+      
+      $user = User::find($request->user_id);
+      // return new BookResource($book);
+      return new UserResource($user);
     }
     public function logout()
     {
         auth()->logout();
         return response()->json(['message'=>'Successfully logged out']);
     }
+
+    public function mybook(Request $request) //본인 리뷰
+    {
+      $user = User::find($request->user_id);
+        // return new BookResource($book);
+        return new UserResource($user);
+    }
+
     protected function respondWithToken($token)
     {
       return response()->json([
@@ -52,5 +64,4 @@ class AuthController extends Controller
       ]);
     }
 
-    
 }
