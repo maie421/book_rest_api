@@ -19,6 +19,11 @@ class CreateBooksTable extends Migration
             $table->string('score');
             $table->string('isbn');
             $table->text('body');
+            $table->string('title');
+            $table->string('thumbnail');
+            $table->string('authors');
+            $table->text('contents');
+            $table->string('publisher');
             $table->timestamps();
 
 

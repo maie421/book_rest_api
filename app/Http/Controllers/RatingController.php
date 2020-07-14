@@ -21,9 +21,9 @@ class RatingController extends Controller
         ]);
         $rating = new Rating;
         // $rating->user_id = $request->user()->id;
-        $rating->user_id = 1;
+        $rating->user_id =  1;
         $rating->rating =$request->rating;
-        $rating->book_id = 1;
+        $rating->book_id =  $request->book_id;
         $rating->save();
 
         return new RatingResource($rating);

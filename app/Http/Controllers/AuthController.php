@@ -46,14 +46,6 @@ class AuthController extends Controller
         auth()->logout();
         return response()->json(['message'=>'Successfully logged out']);
     }
-
-    public function mybook(Request $request) //본인 리뷰
-    {
-      $user = User::find($request->user_id);
-        // return new BookResource($book);
-        return new UserResource($user);
-    }
-
     protected function respondWithToken($token)
     {
       return response()->json([

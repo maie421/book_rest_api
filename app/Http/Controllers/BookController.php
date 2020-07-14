@@ -20,20 +20,23 @@ class BookController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'score' => 'required',
-            'body' => 'required',
-            'isbn' => 'required',
-        ]);
+
         $book = new Book;
         // $book->user_id = $request->user()->id;
-        $book->user_id =  $request->user_id;
+        $book->user_id =  1;
         $book->score = $request->score;
         $book->body = $request->body;
         $book->isbn = $request->isbn;
+        $book->title = $request->title;
+        $book->thumbnail = $request->thumbnail;
+        $book->authors = $request->authors;
+        $book->contents = $request->contents;
+        $book->publisher = $request->publisher;
         $book->save();
+        
+        // return response()->json(['message'=>'Successfully logged out']);
         return new BookResource($book);
-}
+    }
 
     public function show($book)//isbn 책기준 리뷰
     {
