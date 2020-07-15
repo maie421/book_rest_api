@@ -20,7 +20,6 @@ class BookResource extends JsonResource
             'score' => $this->score,
             'user' => $this->user,
             'ratings' => $this->ratings,
-            'user' => $this->user,
             'thumbnail' => $this->thumbnail,
             'isbn'=>$this->isbn,
             'title'=>$this->title,

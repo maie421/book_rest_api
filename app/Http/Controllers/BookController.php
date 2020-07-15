@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Book;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Resources\BookResource;
 
@@ -38,15 +39,25 @@ class BookController extends Controller
         return new BookResource($book);
     }
 
+    // public function show($book)//isbn 책기준 리뷰
+    // {
+    //   $book = Book::where('isbn', $book)
+    //            ->orderBy('created_at', 'desc')
+    //            ->get();
+
+    //     return new BookResource($book);
+    //     // return response()->json($book);
+    // }
+
     public function show($book)//isbn 책기준 리뷰
     {
+
       $book = Book::where('isbn', $book)
-               ->orderBy('created_at', 'desc')
-               ->get();
-        // return new BookResource($book);
+            ->orderBy('created_at', 'desc')
+            ->get();
+            // $book = $user_id->fresh('user');
         return response()->json($book);
     }
-
 
     public function update(Request $request, Book $book)
 
