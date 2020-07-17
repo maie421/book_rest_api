@@ -12,7 +12,7 @@ class RatingResource extends JsonResource
         return [
             'id'=> $this->id,
             // 'user_id' =>  UserResource::collection($this->user_id),
-            'user_id'=> $this->user_id,
+            // 'user_id'=> $this->user_id,
             'user' => $this->user,
             'book_id'=> $this->book_id,
             'rating'=>$this->rating,
