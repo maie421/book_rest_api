@@ -19,7 +19,7 @@ class BookResource extends JsonResource
             'body'=> $this->body,
             'score' => $this->score,
             'user' => $this->user,
-            'ratings' =>  RatingResource::collection($this->ratings)->sortByDesc('created_at'),
+            'ratings' =>  RatingResource::collection($this->ratings->sortByDesc('created_at')),
             // 'ratings' => $this->ratings,
             'thumbnail' => $this->thumbnail,
             'isbn'=>$this->isbn,

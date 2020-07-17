@@ -12,16 +12,8 @@ class BookController extends Controller
 {
     public function index()
     {
-    //  $user = User::find($request->user_id);
-        // $book =DB::table('books')
-        //         ->orderBy('created_at', 'desc')
-        //         ->get();
-                $book = Book::all();
-      // return BookResource::collection(Book::with('ratings')->paginate(25));
+      
       return BookResource::collection(Book::all()->sortByDesc('created_at'));
-      // return Book::all();
-      // dd( $book);
-      // return new BookResource($book);
     }
 
     public function store(Request $request)
