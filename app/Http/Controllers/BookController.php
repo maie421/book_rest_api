@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Book;
 use App\User;
+use App\Rating;
+use App\Like;
 use Illuminate\Http\Request;
 use App\Http\Resources\BookResource;
 use Illuminate\Support\Facades\DB;
@@ -21,7 +23,7 @@ class BookController extends Controller
 
         $book = new Book;
         // $book->user_id = $request->user()->id;
-        $book->user_id =  1;
+        $book->user_id =  $request->user_id;
         $book->score = $request->score;
         $book->body = $request->body;
         $book->isbn = $request->isbn;
@@ -73,11 +75,21 @@ class BookController extends Controller
       return new BookResource($book);
     }
 
+    public function emotionupdate(Request $request,Book $book)
+    {
+      $book->update($request->only(['emotion']));
+
+      return new BookResource($book);
+    }
+
     public function destroy(Request $request,Book $book)
     {
-      if($request->user()->id != $book->user_id){
+      if($request->user_id != $book->user_id){
         return response()->json(['error' => 'You can only delete your own books.'], 403);
       }
+
+        Like::where('book_id',$book->id)->delete();
+        Rating::where('book_id',$book->id)->delete();
         $book ->delete();
         return response()->json(null,204);
     }

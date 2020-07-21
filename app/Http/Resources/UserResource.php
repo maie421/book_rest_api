@@ -18,7 +18,7 @@ class UserResource extends JsonResource
         "id" => $this->id,
         "name" => $this->name,
         "email" => $this->email,
-        'books' => BookResource::collection($this->books),
+        'books' => BookResource::collection($this->books->sortByDesc('created_at')),
         ];
     }
 

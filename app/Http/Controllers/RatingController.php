@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Book;
+
 use App\Rating;
 use App\Http\Resources\RatingResource;
 use Illuminate\Http\Request;

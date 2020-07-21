@@ -21,4 +21,6 @@ Route::get('user', 'AuthController@getAuthUser');
 
 Route::apiResource('books', 'BookController');
 Route::post('books/ratings', 'RatingController@store');
+Route::post('books/likes', 'LikeController@store');
+Route::get('books/likes/{like}', 'LikeController@destroy');
 
