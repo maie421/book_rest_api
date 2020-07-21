@@ -20,6 +20,7 @@ Route::get('user', 'AuthController@getAuthUser');
 // Route::get('user/{id}', 'BookController@mybook');
 
 Route::apiResource('books', 'BookController');
+Route::patch('books/{book}/emotion', 'BookController@emotionupdate');
 Route::post('books/ratings', 'RatingController@store');
 Route::post('books/likes', 'LikeController@store');
 Route::get('books/likes/{like}', 'LikeController@destroy');

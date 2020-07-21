@@ -75,10 +75,12 @@ class BookController extends Controller
       return new BookResource($book);
     }
 
+    
     public function emotionupdate(Request $request,Book $book)
     {
-      $book->update($request->only(['emotion']));
-
+      //$book->update($request->only(['emotion']));
+      $book->emotion =  $request->emotion;
+      $book->save();
       return new BookResource($book);
     }
 
