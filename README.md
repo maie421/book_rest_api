@@ -37,7 +37,7 @@ CI 서버에서 빌드 완료시 Shell script가 작동하여 빌드된 이미�
 Push 완료시 EC2 서버에서 docker hub에 올라간 이미지를 받아 실행시킵니다.<br/>
 
 <h4>docker hub</h4>
-https://hub.docker.com/repository/docker/maie421/book_api<br/>
+https://hub.docker.com/repository/docker/maie421/laravel_book_api<br/>
 
 <h3>프론트 github</h3>
 https://github.com/maie421/FLYBOOK <br/>
