@@ -9,12 +9,10 @@
   <li>배포 : EC2 , RDS</li>
 </ul>
 
+<img src="https://user-images.githubusercontent.com/35258834/99074925-f907f780-25fb-11eb-893d-98139e9a568b.PNG" align="left" width="100%">
 <h3>결과 데이터</h3>
 <h3>API</h3>
 <img src="https://user-images.githubusercontent.com/35258834/88254303-d326b200-ccef-11ea-891c-bf7c0850a2b7.png" width="100%">
-
-<img src="https://user-images.githubusercontent.com/35258834/99074925-f907f780-25fb-11eb-893d-98139e9a568b.PNG" align="left" width="100%">
-
 
 <h3>CI</h3>
 Jenkins : 로컬환경에서 사용(feat. Docker)<br/>
