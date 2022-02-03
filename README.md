@@ -14,10 +14,6 @@
 <h3>API</h3>
 <img src="https://user-images.githubusercontent.com/35258834/88254303-d326b200-ccef-11ea-891c-bf7c0850a2b7.png" width="100%">
 
-<h3>CI</h3>
-Jenkins : 로컬환경에서 사용(feat. Docker)<br/>
-master 권한으로 업로드시 자동 build<br/>
-
 <h3>CD</h3>
 Docker 이미지를 제작하여 배포합니다.<br/>
 CI 서버에서 빌드 완료시 Shell script가 작동하여 빌드된 이미지가 docker hub에 저장됩니다.<br/>
